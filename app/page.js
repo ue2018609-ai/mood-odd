@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -9,7 +9,6 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function Home() {
   const page = useRef();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useGSAP(() => {
     const motion = gsap.matchMedia();
@@ -74,22 +73,6 @@ export default function Home() {
 
   return (
     <main ref={page}>
-      <button
-        className="menu-button"
-        type="button"
-        aria-expanded={isMenuOpen}
-        onClick={() => setIsMenuOpen((open) => !open)}
-      >
-        {isMenuOpen ? "CLOSE" : "MENU"}
-      </button>
-
-      {isMenuOpen && (
-        <nav className="menu-panel" aria-label="Look menu">
-          <a href="#look-01" onClick={() => setIsMenuOpen(false)}>LOOK 01</a>
-          <a href="#look-02" onClick={() => setIsMenuOpen(false)}>LOOK 02</a>
-        </nav>
-      )}
-
       <section className="hero">
         <h1 className="hero-title">MOOD ODD</h1>
         <span className="scroll-hint">SCROLL TO DISCOVER</span>
