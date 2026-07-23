@@ -19,6 +19,23 @@ export default function Home() {
           </dl>
         </div>
       </section>
+      <section className="look-card">
+        <img
+          className="look"
+          src="/looks/mood-odd-look-03-bape.png"
+          alt="차콜 후드집업과 네이비 스트라이프 쇼츠, 검정과 흰색 베이프 스타일 신발을 조합한 새깅 코디"
+        />
+        <div className="look-info">
+          <span>LOOK 02</span>
+          <h1>Low Signal</h1>
+          <p>낮게 떨어지는 실루엣에 선명한 흰색 선을 남긴 스트리트 룩</p>
+          <dl>
+            <div><dt>TOP</dt><dd>워싱 차콜 후드집업</dd></div>
+            <div><dt>BOTTOM</dt><dd>네이비 스트라이프 쇼츠</dd></div>
+            <div><dt>SHOES</dt><dd>블랙 &amp; 화이트 베이프 스타일</dd></div>
+          </dl>
+        </div>
+      </section>
     </main>
   );
 }
