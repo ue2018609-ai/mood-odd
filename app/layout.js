@@ -1,6 +1,4 @@
 import "./globals.css";
-import "@radix-ui/themes/styles.css";
-import { Theme } from "@radix-ui/themes";
 
 export const metadata = {
   title: "Mood Styling",
@@ -10,11 +8,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ko">
-      <body>
-        <Theme radius="none" grayColor="gray" panelBackground="solid" hasBackground={false}>
-          {children}
-        </Theme>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
