@@ -49,14 +49,34 @@ main {
 }
 
 .look-card {
-  width: min(1000px, 100%);
-  margin: 56px auto 0;
+  width: min(1120px, 100%);
+  margin: 96px auto 0;
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
-  background: rgba(226, 227, 224, 0.78);
-  border: 1px solid rgba(34, 35, 32, 0.16);
-  overflow: hidden;
+  grid-template-columns: minmax(0, 1.35fr) minmax(220px, 0.65fr);
+  gap: clamp(22px, 4vw, 56px);
+  align-items: end;
+  background: transparent;
+  border: 0;
+  overflow: visible;
   will-change: clip-path;
+}
+
+.look-card:nth-of-type(odd) {
+  transform: translateX(-3vw);
+}
+
+.look-card:nth-of-type(even) {
+  grid-template-columns: minmax(220px, 0.65fr) minmax(0, 1.35fr);
+  transform: translateX(3vw);
+}
+
+.look-card:nth-of-type(even) .look-frame {
+  grid-column: 2;
+}
+
+.look-card:nth-of-type(even) .look-info {
+  grid-column: 1;
+  grid-row: 1;
 }
 
 .look-frame {
@@ -65,18 +85,19 @@ main {
   border: 0;
   background: transparent;
   cursor: zoom-in;
+  box-shadow: 0 28px 70px rgba(31, 33, 31, 0.18);
 }
 
 .look {
   display: block;
   width: 100%;
-  height: min(72vh, 720px);
+  height: min(82vh, 820px);
   object-fit: cover;
 }
 
 .look-info {
-  padding: clamp(32px, 6vw, 72px);
-  align-self: center;
+  padding: 0 0 22px;
+  align-self: end;
 }
 
 .look-info span,
@@ -87,7 +108,7 @@ dt {
 
 .look-info h1 {
   margin: 22px 0 16px;
-  font-size: clamp(2rem, 4vw, 4rem);
+  font-size: clamp(2.2rem, 5vw, 5.4rem);
   font-weight: 400;
   line-height: 0.95;
 }
@@ -99,7 +120,7 @@ dt {
 }
 
 dl {
-  margin: 48px 0 0;
+  margin: 42px 0 0;
 }
 
 dl div {
@@ -150,6 +171,19 @@ dd {
   .look-card {
     grid-template-columns: 1fr;
     margin-top: 32px;
+    transform: none;
+    gap: 0;
+  }
+
+  .look-card:nth-of-type(even) {
+    grid-template-columns: 1fr;
+    transform: none;
+  }
+
+  .look-card:nth-of-type(even) .look-frame,
+  .look-card:nth-of-type(even) .look-info {
+    grid-column: auto;
+    grid-row: auto;
   }
 
   .hero {
@@ -162,6 +196,10 @@ dd {
 
   .look {
     height: auto;
+  }
+
+  .look-info {
+    padding: 28px 0 0;
   }
 
 }
