@@ -84,14 +84,10 @@ export default function Home() {
       </button>
 
       {isMenuOpen && (
-        <aside className="brand-panel">
-          <span>ABOUT</span>
-          <h2>MOOD ODD</h2>
-          <p>
-            Calm streetwear with one strange detail. Quiet colors, oversized shapes,
-            and a mood that feels slightly off.
-          </p>
-        </aside>
+        <nav className="menu-panel" aria-label="Look menu">
+          <a href="#look-01" onClick={() => setIsMenuOpen(false)}>LOOK 01</a>
+          <a href="#look-02" onClick={() => setIsMenuOpen(false)}>LOOK 02</a>
+        </nav>
       )}
 
       <section className="hero">
@@ -99,7 +95,7 @@ export default function Home() {
         <span className="scroll-hint">SCROLL TO DISCOVER</span>
       </section>
 
-      <section className="look-card">
+      <section className="look-card" id="look-01">
         <img
           className="look"
           src="/looks/mood-odd-look-02.png"
@@ -117,7 +113,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="look-card">
+      <section className="look-card" id="look-02">
         <img
           className="look"
           src="/looks/mood-odd-look-03-bape.png"
