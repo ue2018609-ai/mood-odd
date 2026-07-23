@@ -30,7 +30,27 @@ main {
   overflow: hidden;
 }
 
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(184, 185, 182, 0.52);
+  z-index: 1;
+}
+
+.hero-image {
+  position: absolute;
+  width: min(520px, 82vw);
+  height: 88%;
+  object-fit: cover;
+  opacity: 0.3;
+  filter: grayscale(1) blur(1px);
+  transform: translateY(4%);
+}
+
 .hero-title {
+  position: relative;
+  z-index: 2;
   margin: 0;
   font-size: clamp(3rem, 13vw, 11rem);
   font-weight: 400;
@@ -44,6 +64,7 @@ main {
 .scroll-hint {
   position: absolute;
   bottom: 4px;
+  z-index: 2;
   font-size: 0.6rem;
   letter-spacing: 0.28em;
 }
@@ -192,6 +213,11 @@ dd {
 
   .hero-title {
     font-size: clamp(2.7rem, 15vw, 5rem);
+  }
+
+  .hero-image {
+    width: min(360px, 84vw);
+    height: 76%;
   }
 
   .look {
