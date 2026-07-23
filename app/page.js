@@ -152,6 +152,11 @@ export default function Home() {
         </section>
       ))}
 
+      <footer className="ending">
+        <span>MOOD ODD</span>
+        <p>quiet clothes, strange mood</p>
+      </footer>
+
       {openLook && (
         <div className="lightbox" role="dialog" aria-modal="true" onClick={() => setOpenLook(null)}>
           <button className="lightbox-close" type="button" aria-label="이미지 닫기">

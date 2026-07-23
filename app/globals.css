@@ -175,6 +175,26 @@ dd {
   font-size: 0.85rem;
 }
 
+.ending {
+  display: grid;
+  place-items: center;
+  min-height: 52svh;
+  text-align: center;
+}
+
+.ending span {
+  font-size: clamp(2.5rem, 8vw, 7rem);
+  letter-spacing: 0.18em;
+  transform: translateX(0.09em);
+}
+
+.ending p {
+  margin: 18px 0 0;
+  color: #585a54;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+}
+
 .lightbox {
   position: fixed;
   inset: 0;
