@@ -8,8 +8,8 @@ body {
 }
 
 body {
-  background: #d9d8d2;
-  color: #222320;
+  background: #b8b9b6;
+  color: #1f211f;
   font-family: Arial, sans-serif;
 }
 
@@ -17,8 +17,8 @@ main {
   min-height: 100vh;
   padding: 32px;
   background:
-    radial-gradient(circle at 74% 31%, rgba(104, 112, 94, 0.3), transparent 18%),
-    linear-gradient(145deg, #e7e5df 0%, #c6c7bf 100%);
+    radial-gradient(circle at 76% 24%, rgba(255, 255, 255, 0.22), transparent 24%),
+    linear-gradient(145deg, #d3d4d1 0%, #a8aaa7 100%);
 }
 
 .title {
@@ -32,7 +32,7 @@ main {
   margin: 56px auto 0;
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
-  background: rgba(239, 238, 233, 0.76);
+  background: rgba(226, 227, 224, 0.78);
   border: 1px solid rgba(34, 35, 32, 0.16);
 }
 
