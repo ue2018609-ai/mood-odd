@@ -81,6 +81,45 @@ dd {
   font-size: 0.85rem;
 }
 
+.stylist-box {
+  width: min(1000px, 100%);
+  margin: 56px auto 0;
+  padding: clamp(36px, 7vw, 80px);
+  border: 1px dashed rgba(31, 33, 31, 0.45);
+  text-align: center;
+}
+
+.stylist-box span {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+}
+
+.stylist-box h2 {
+  margin: 20px 0 14px;
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.stylist-box p {
+  margin: 0 auto 28px;
+  max-width: 460px;
+  color: #585a54;
+  line-height: 1.7;
+}
+
+.upload-button {
+  display: inline-block;
+  padding: 13px 24px;
+  border: 1px solid #1f211f;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.upload-button input {
+  display: none;
+}
+
 @media (max-width: 700px) {
   main {
     padding: 20px;

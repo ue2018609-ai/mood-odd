@@ -36,6 +36,15 @@ export default function Home() {
           </dl>
         </div>
       </section>
+      <section className="stylist-box">
+        <span>AI STYLIST</span>
+        <h2>옷 사진 한 장으로<br />코디 시작하기</h2>
+        <p>가지고 있는 옷을 올리면 어울리는 상의, 하의와 신발을 찾아줄게.</p>
+        <label className="upload-button">
+          사진 고르기
+          <input type="file" accept="image/*" />
+        </label>
+      </section>
     </main>
   );
 }
