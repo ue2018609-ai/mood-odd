@@ -59,6 +59,14 @@ main {
   will-change: clip-path;
 }
 
+.look-frame {
+  display: block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
 .look {
   display: block;
   width: 100%;
@@ -102,6 +110,36 @@ dl div {
 dd {
   margin: 7px 0 0;
   font-size: 0.85rem;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+  background: rgba(18, 19, 17, 0.86);
+  cursor: zoom-out;
+}
+
+.lightbox img {
+  max-width: min(100%, 980px);
+  max-height: 88svh;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 22px;
+  right: 22px;
+  padding: 10px 14px;
+  border: 1px solid rgba(241, 241, 238, 0.42);
+  background: rgba(31, 33, 31, 0.72);
+  color: #f1f1ee;
+  font: inherit;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
 }
 
 @media (max-width: 700px) {

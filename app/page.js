@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -9,6 +9,36 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function Home() {
   const page = useRef();
+  const [openLook, setOpenLook] = useState(null);
+
+  const looks = [
+    {
+      id: "look-01",
+      number: "LOOK 01",
+      title: "Quiet Distortion",
+      image: "/looks/mood-odd-look-02.png",
+      alt: "Black oversized tee, denim shorts, and black white sneakers street outfit",
+      mood: "차분한 블랙에 낯선 비율을 섞은 스트릿 룩.",
+      items: [
+        ["TOP", "Balenciaga black tee"],
+        ["BOTTOM", "Denim sagging shorts"],
+        ["SHOES", "Louis Vuitton black and white sneaker"],
+      ],
+    },
+    {
+      id: "look-02",
+      number: "LOOK 02",
+      title: "Low Signal",
+      image: "/looks/mood-odd-look-03-bape.png",
+      alt: "Black zip hoodie, navy striped shorts, and Bape sneakers street outfit",
+      mood: "새깅 실루엣에 선명한 라인을 얹은 스트릿 룩.",
+      items: [
+        ["TOP", "Black zip hoodie"],
+        ["BOTTOM", "Thom Browne navy shorts"],
+        ["SHOES", "Bape black and white sneaker"],
+      ],
+    },
+  ];
 
   useGSAP(() => {
     const motion = gsap.matchMedia();
@@ -78,42 +108,35 @@ export default function Home() {
         <span className="scroll-hint">SCROLL TO DISCOVER</span>
       </section>
 
-      <section className="look-card" id="look-01">
-        <img
-          className="look"
-          src="/looks/mood-odd-look-02.png"
-          alt="검정 오버핏 셔츠와 데님 반바지, 흰색과 검정 운동화를 조합한 코디"
-        />
-        <div className="look-info">
-          <span>LOOK 01</span>
-          <h1>Quiet Distortion</h1>
-          <p>차분한 검정 안에 낯선 비율을 얹은 스트리트 룩</p>
-          <dl>
-            <div><dt>TOP</dt><dd>블랙 오버핏 셔츠</dd></div>
-            <div><dt>BOTTOM</dt><dd>와이드 데님 쇼츠</dd></div>
-            <div><dt>SHOES</dt><dd>화이트 &amp; 블랙 스니커즈</dd></div>
-          </dl>
-        </div>
-      </section>
+      {looks.map((look) => (
+        <section className="look-card" id={look.id} key={look.id}>
+          <button className="look-frame" type="button" onClick={() => setOpenLook(look)}>
+            <img className="look" src={look.image} alt={look.alt} />
+          </button>
+          <div className="look-info">
+            <span>{look.number}</span>
+            <h1>{look.title}</h1>
+            <p>{look.mood}</p>
+            <dl>
+              {look.items.map(([label, value]) => (
+                <div key={label}>
+                  <dt>{label}</dt>
+                  <dd>{value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+      ))}
 
-      <section className="look-card" id="look-02">
-        <img
-          className="look"
-          src="/looks/mood-odd-look-03-bape.png"
-          alt="차콜 후드집업과 네이비 스트라이프 쇼츠, 베이프 신발을 조합한 새깅 코디"
-        />
-        <div className="look-info">
-          <span>LOOK 02</span>
-          <h1>Low Signal</h1>
-          <p>낮게 떨어지는 실루엣에 선명한 흰색 선을 섞은 스트리트 룩</p>
-          <dl>
-            <div><dt>TOP</dt><dd>블랙 차콜 후드집업</dd></div>
-            <div><dt>BOTTOM</dt><dd>네이비 스트라이프 쇼츠</dd></div>
-            <div><dt>SHOES</dt><dd>블랙 &amp; 화이트 베이프 스타</dd></div>
-          </dl>
+      {openLook && (
+        <div className="lightbox" role="dialog" aria-modal="true" onClick={() => setOpenLook(null)}>
+          <button className="lightbox-close" type="button" aria-label="Close image">
+            CLOSE
+          </button>
+          <img src={openLook.image} alt={openLook.alt} />
         </div>
-      </section>
-
+      )}
     </main>
   );
 }
