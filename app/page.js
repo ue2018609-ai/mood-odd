@@ -1,50 +1,47 @@
+import Stylist from "./stylist";
+
 export default function Home() {
   return (
     <main>
       <p className="title">MOOD ODD</p>
+
       <section className="look-card">
         <img
           className="look"
           src="/looks/mood-odd-look-02.png"
-          alt="검정 오버핏 티셔츠와 데님 반바지, 흰색과 검정 운동화를 조합한 코디"
+          alt="검정 오버핏 셔츠와 데님 반바지, 흰색과 검정 운동화를 조합한 코디"
         />
         <div className="look-info">
           <span>LOOK 01</span>
           <h1>Quiet Distortion</h1>
-          <p>차분한 검정 안에 낯선 비율을 섞은 스트리트 룩</p>
+          <p>차분한 검정 안에 낯선 비율을 얹은 스트리트 룩</p>
           <dl>
-            <div><dt>TOP</dt><dd>워싱 오버핏 티셔츠</dd></div>
+            <div><dt>TOP</dt><dd>블랙 오버핏 셔츠</dd></div>
             <div><dt>BOTTOM</dt><dd>와이드 데님 쇼츠</dd></div>
             <div><dt>SHOES</dt><dd>화이트 &amp; 블랙 스니커즈</dd></div>
           </dl>
         </div>
       </section>
+
       <section className="look-card">
         <img
           className="look"
           src="/looks/mood-odd-look-03-bape.png"
-          alt="차콜 후드집업과 네이비 스트라이프 쇼츠, 검정과 흰색 베이프 스타일 신발을 조합한 새깅 코디"
+          alt="차콜 후드집업과 네이비 스트라이프 쇼츠, 베이프 신발을 조합한 새깅 코디"
         />
         <div className="look-info">
           <span>LOOK 02</span>
           <h1>Low Signal</h1>
-          <p>낮게 떨어지는 실루엣에 선명한 흰색 선을 남긴 스트리트 룩</p>
+          <p>낮게 떨어지는 실루엣에 선명한 흰색 선을 섞은 스트리트 룩</p>
           <dl>
-            <div><dt>TOP</dt><dd>워싱 차콜 후드집업</dd></div>
+            <div><dt>TOP</dt><dd>블랙 차콜 후드집업</dd></div>
             <div><dt>BOTTOM</dt><dd>네이비 스트라이프 쇼츠</dd></div>
-            <div><dt>SHOES</dt><dd>블랙 &amp; 화이트 베이프 스타일</dd></div>
+            <div><dt>SHOES</dt><dd>블랙 &amp; 화이트 베이프 스타</dd></div>
           </dl>
         </div>
       </section>
-      <section className="stylist-box">
-        <span>AI STYLIST</span>
-        <h2>옷 사진 한 장으로<br />코디 시작하기</h2>
-        <p>가지고 있는 옷을 올리면 어울리는 상의, 하의와 신발을 찾아줄게.</p>
-        <label className="upload-button">
-          사진 고르기
-          <input type="file" accept="image/*" />
-        </label>
-      </section>
+
+      <Stylist />
     </main>
   );
 }
