@@ -4,7 +4,6 @@
   },
   "dependencies": {
     "next": "latest",
-    "openai": "^6.48.0",
     "react": "latest",
     "react-dom": "latest"
   }

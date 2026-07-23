@@ -1,5 +1,3 @@
-import Stylist from "./stylist";
-
 export default function Home() {
   return (
     <main>
@@ -40,8 +38,6 @@ export default function Home() {
           </dl>
         </div>
       </section>
-
-      <Stylist />
     </main>
   );
 }
