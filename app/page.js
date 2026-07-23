@@ -38,6 +38,19 @@ export default function Home() {
         ["신발", "베이프 검흰 스니커즈"],
       ],
     },
+    {
+      id: "look-03",
+      number: "LOOK 03",
+      title: "Heavy Prep",
+      image: "/looks/mood-odd-look-04-pants.png",
+      alt: "그레이 카고 데님 팬츠에 폴로티와 루이비통 신발을 맞춘 스트릿 코디",
+      mood: "무거운 카고 데님에 단정한 폴로티를 섞은 새깅 스트릿 룩.",
+      items: [
+        ["상의", "블랙 또는 차콜 폴로티"],
+        ["하의", "그레이 카고 데님 팬츠"],
+        ["신발", "루이비통 검흰 스니커즈"],
+      ],
+    },
   ];
 
   useGSAP(() => {
@@ -131,7 +144,7 @@ export default function Home() {
 
       {openLook && (
         <div className="lightbox" role="dialog" aria-modal="true" onClick={() => setOpenLook(null)}>
-          <button className="lightbox-close" type="button" aria-label="Close image">
+          <button className="lightbox-close" type="button" aria-label="이미지 닫기">
             닫기
           </button>
           <img src={openLook.image} alt={openLook.alt} />
