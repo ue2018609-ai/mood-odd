@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -9,6 +9,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function Home() {
   const page = useRef();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useGSAP(() => {
     const motion = gsap.matchMedia();
@@ -73,9 +74,25 @@ export default function Home() {
 
   return (
     <main ref={page}>
-      <button className="menu-button" type="button" aria-label="Open menu">
-        MENU
+      <button
+        className="menu-button"
+        type="button"
+        aria-expanded={isMenuOpen}
+        onClick={() => setIsMenuOpen((open) => !open)}
+      >
+        {isMenuOpen ? "CLOSE" : "MENU"}
       </button>
+
+      {isMenuOpen && (
+        <aside className="brand-panel">
+          <span>ABOUT</span>
+          <h2>MOOD ODD</h2>
+          <p>
+            Calm streetwear with one strange detail. Quiet colors, oversized shapes,
+            and a mood that feels slightly off.
+          </p>
+        </aside>
+      )}
 
       <section className="hero">
         <h1 className="hero-title">MOOD ODD</h1>

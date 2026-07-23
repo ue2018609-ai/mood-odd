@@ -42,6 +42,38 @@ main {
   color: #f1f1ee;
 }
 
+.brand-panel {
+  position: fixed;
+  top: 72px;
+  right: 24px;
+  z-index: 19;
+  width: min(340px, calc(100vw - 48px));
+  padding: 28px;
+  border: 1px solid rgba(31, 33, 31, 0.28);
+  background: rgba(31, 33, 31, 0.9);
+  color: #f1f1ee;
+  backdrop-filter: blur(18px);
+}
+
+.brand-panel span {
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+}
+
+.brand-panel h2 {
+  margin: 16px 0 14px;
+  font-size: 2.4rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 0.9;
+}
+
+.brand-panel p {
+  margin: 0;
+  color: #c8c9c5;
+  line-height: 1.7;
+}
+
 .hero {
   position: relative;
   display: grid;
@@ -133,6 +165,12 @@ dd {
   .menu-button {
     top: 16px;
     right: 16px;
+  }
+
+  .brand-panel {
+    top: 62px;
+    right: 16px;
+    width: calc(100vw - 32px);
   }
 
   .look-card {
