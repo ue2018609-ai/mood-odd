@@ -1,7 +1,82 @@
+"use client";
+
+import { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
 export default function Home() {
+  const page = useRef();
+
+  useGSAP(() => {
+    const motion = gsap.matchMedia();
+
+    motion.add("(prefers-reduced-motion: no-preference)", () => {
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: ".hero",
+          start: "top top",
+          end: "+=90%",
+          scrub: 1,
+          pin: true,
+        },
+      })
+        .to(".hero-title", {
+          letterSpacing: "0.5em",
+          opacity: 0,
+          scale: 0.96,
+          ease: "none",
+        })
+        .to(".scroll-hint", { opacity: 0, ease: "none" }, 0);
+
+      gsap.utils.toArray(".look-card").forEach((card) => {
+        const image = card.querySelector(".look");
+        const info = card.querySelector(".look-info");
+
+        gsap.from(card, {
+          clipPath: "inset(14% 0 0 0)",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 88%",
+            end: "top 35%",
+            scrub: 1,
+          },
+        });
+
+        gsap.from(image, {
+          scale: 1.08,
+          scrollTrigger: {
+            trigger: card,
+            start: "top 88%",
+            end: "top 35%",
+            scrub: 1,
+          },
+        });
+
+        gsap.from(info, {
+          y: 48,
+          opacity: 0,
+          duration: 0.9,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 65%",
+          },
+        });
+      });
+    });
+
+    return () => motion.revert();
+  }, { scope: page });
+
   return (
-    <main>
-      <p className="title">MOOD ODD</p>
+    <main ref={page}>
+      <section className="hero">
+        <h1 className="hero-title">MOOD ODD</h1>
+        <span className="scroll-hint">SCROLL TO DISCOVER</span>
+      </section>
 
       <section className="look-card">
         <img
