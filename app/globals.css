@@ -23,8 +23,9 @@ main {
 
 .title {
   margin: 0;
-  font-size: clamp(0.7rem, 1vw, 0.9rem);
-  letter-spacing: 0.42em;
+  font-size: clamp(0.72rem, 1vw, 0.92rem);
+  font-weight: 700;
+  letter-spacing: 0.48em;
 }
 
 .look-card {
@@ -32,8 +33,12 @@ main {
   margin: 56px auto 0;
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
-  background: rgba(226, 227, 224, 0.78);
-  border: 1px solid rgba(34, 35, 32, 0.16);
+  padding: 0;
+  overflow: hidden;
+  background: #dfe0dd;
+  border: 1px solid #282a27;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .look {
@@ -46,6 +51,7 @@ main {
 .look-info {
   padding: clamp(32px, 6vw, 72px);
   align-self: center;
+  border-left: 1px solid #282a27;
 }
 
 .look-info span,
@@ -57,7 +63,9 @@ dt {
 .look-info h1 {
   margin: 22px 0 16px;
   font-size: clamp(2rem, 4vw, 4rem);
-  font-weight: 400;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  letter-spacing: -0.04em;
   line-height: 0.95;
 }
 
@@ -73,7 +81,7 @@ dl {
 
 dl div {
   padding: 14px 0;
-  border-top: 1px solid rgba(34, 35, 32, 0.16);
+  border-top: 1px solid #777a74;
 }
 
 dd {
@@ -93,5 +101,10 @@ dd {
 
   .look {
     height: auto;
+  }
+
+  .look-info {
+    border-top: 1px solid #282a27;
+    border-left: 0;
   }
 }

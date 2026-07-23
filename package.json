@@ -3,6 +3,7 @@
     "dev": "next dev"
   },
   "dependencies": {
+    "@radix-ui/themes": "^3.3.0",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest"
