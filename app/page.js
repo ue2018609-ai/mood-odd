@@ -17,12 +17,12 @@ export default function Home() {
       number: "LOOK 01",
       title: "Quiet Distortion",
       image: "/looks/mood-odd-look-02.png",
-      alt: "Black oversized tee, denim shorts, and black white sneakers street outfit",
-      mood: "차분한 블랙에 낯선 비율을 섞은 스트릿 룩.",
+      alt: "검정 오버핏 티셔츠와 데님 반바지, 검흰 운동화를 조합한 스트릿 코디",
+      mood: "차분한 검정에 낯선 비율을 얹은 스트릿 룩.",
       items: [
-        ["TOP", "Balenciaga black tee"],
-        ["BOTTOM", "Denim sagging shorts"],
-        ["SHOES", "Louis Vuitton black and white sneaker"],
+        ["상의", "발렌시아가 블랙 티셔츠"],
+        ["하의", "데님 새깅 반바지"],
+        ["신발", "루이비통 검흰 스니커즈"],
       ],
     },
     {
@@ -30,12 +30,12 @@ export default function Home() {
       number: "LOOK 02",
       title: "Low Signal",
       image: "/looks/mood-odd-look-03-bape.png",
-      alt: "Black zip hoodie, navy striped shorts, and Bape sneakers street outfit",
-      mood: "새깅 실루엣에 선명한 라인을 얹은 스트릿 룩.",
+      alt: "블랙 후드집업과 네이비 반바지, 베이프 운동화를 조합한 스트릿 코디",
+      mood: "새깅 실루엣에 선명한 흰 라인을 얹은 스트릿 룩.",
       items: [
-        ["TOP", "Black zip hoodie"],
-        ["BOTTOM", "Thom Browne navy shorts"],
-        ["SHOES", "Bape black and white sneaker"],
+        ["상의", "블랙 후드집업"],
+        ["하의", "톰브라운 네이비 반바지"],
+        ["신발", "베이프 검흰 스니커즈"],
       ],
     },
   ];
@@ -132,7 +132,7 @@ export default function Home() {
       {openLook && (
         <div className="lightbox" role="dialog" aria-modal="true" onClick={() => setOpenLook(null)}>
           <button className="lightbox-close" type="button" aria-label="Close image">
-            CLOSE
+            닫기
           </button>
           <img src={openLook.image} alt={openLook.alt} />
         </div>
