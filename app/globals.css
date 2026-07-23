@@ -21,6 +21,27 @@ main {
     linear-gradient(145deg, #d3d4d1 0%, #a8aaa7 100%);
 }
 
+.look-nav {
+  position: fixed;
+  right: 22px;
+  top: 50%;
+  z-index: 30;
+  display: grid;
+  gap: 14px;
+  transform: translateY(-50%);
+}
+
+.look-nav a {
+  color: rgba(31, 33, 31, 0.58);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-decoration: none;
+}
+
+.look-nav a:hover {
+  color: #1f211f;
+}
+
 .hero {
   position: relative;
   display: grid;
@@ -187,6 +208,10 @@ dd {
 @media (max-width: 700px) {
   main {
     padding: 20px;
+  }
+
+  .look-nav {
+    right: 12px;
   }
 
   .look-card {

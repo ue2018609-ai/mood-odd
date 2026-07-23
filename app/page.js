@@ -117,6 +117,14 @@ export default function Home() {
 
   return (
     <main ref={page}>
+      <nav className="look-nav" aria-label="룩 바로가기">
+        {looks.map((look, index) => (
+          <a href={`#${look.id}`} key={look.id}>
+            {String(index + 1).padStart(2, "0")}
+          </a>
+        ))}
+      </nav>
+
       <section className="hero">
         <img className="hero-image" src="/looks/mood-odd-look-03-bape.png" alt="" aria-hidden="true" />
         <h1 className="hero-title">MOOD ODD</h1>
