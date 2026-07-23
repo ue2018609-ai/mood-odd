@@ -73,6 +73,10 @@ export default function Home() {
 
   return (
     <main ref={page}>
+      <button className="menu-button" type="button" aria-label="Open menu">
+        MENU
+      </button>
+
       <section className="hero">
         <h1 className="hero-title">MOOD ODD</h1>
         <span className="scroll-hint">SCROLL TO DISCOVER</span>

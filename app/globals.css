@@ -21,6 +21,27 @@ main {
     linear-gradient(145deg, #d3d4d1 0%, #a8aaa7 100%);
 }
 
+.menu-button {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 20;
+  padding: 10px 14px;
+  border: 1px solid rgba(31, 33, 31, 0.48);
+  background: rgba(211, 212, 209, 0.64);
+  color: #1f211f;
+  font: inherit;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+}
+
+.menu-button:hover {
+  background: rgba(31, 33, 31, 0.88);
+  color: #f1f1ee;
+}
+
 .hero {
   position: relative;
   display: grid;
@@ -107,6 +128,11 @@ dd {
 @media (max-width: 700px) {
   main {
     padding: 20px;
+  }
+
+  .menu-button {
+    top: 16px;
+    right: 16px;
   }
 
   .look-card {
