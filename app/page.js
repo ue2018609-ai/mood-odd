@@ -39,19 +39,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="finder-card">
-        <span>SIMILAR FINDER</span>
-        <h2>사진으로<br />비슷한 옷 찾기</h2>
-        <p>열린 화면의 카메라 버튼에 옷 사진을 올리면 비슷한 제품을 찾아줘.</p>
-        <a
-          className="finder-button"
-          href="https://images.google.com/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Google Lens 열기
-        </a>
-      </section>
     </main>
   );
 }
