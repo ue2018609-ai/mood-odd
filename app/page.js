@@ -118,7 +118,7 @@ export default function Home() {
   return (
     <main ref={page}>
       <section className="hero">
-        <img className="hero-image" src="/looks/mood-odd-look-04-cap.png" alt="" aria-hidden="true" />
+        <img className="hero-image" src="/looks/mood-odd-look-03-bape.png" alt="" aria-hidden="true" />
         <h1 className="hero-title">MOOD ODD</h1>
         <span className="scroll-hint">SCROLL TO DISCOVER</span>
       </section>
